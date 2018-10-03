@@ -5,9 +5,12 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './static/not-found';
 import { WelcomeComponent } from './static/welcome';
+import { DynamicIframeComponent } from './dynamic-iframe/dynamic-iframe.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', component: WelcomeComponent },
+  { path: 'dynamic-test', component: DynamicIframeComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -15,10 +18,13 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    DynamicIframeComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule, 
+    ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
       // { enableTracing: true } // <-- debugging purposes only
