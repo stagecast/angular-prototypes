@@ -10,6 +10,12 @@ The pixelation component is in two parts:
 1. The image input output component that serves as a reader and displays the results.
 2. The pixelation component that communicates the input image and result image to the I/O component. The input image is read and pixelated and then sent back to the output of the I/O component.
 
+**Easy to add:**
+![How to add form element](https://github.com/stagecast/starter-web-test/blob/feature/dynamic-components-pixelation/easy-to-add.jpg)
+
+**How it looks... design is needed**
+![How it looks](https://github.com/stagecast/starter-web-test/blob/feature/dynamic-components-pixelation/pixelation-form-design-needed.jpg)
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.
