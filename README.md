@@ -1,3 +1,15 @@
+# CustomFormTest
+
+start as usual
+
+go to `localhost:4200/forms` and you should now see two pixelation form elements.
+
+The data of the forms are not store in a good way yet, but serves as a proof of concept for now.
+
+The pixelation component is in two parts: 
+1. The image input output component that serves as a reader and displays the results.
+2. The pixelation component that communicates the input image and result image to the I/O component. The input image is read and pixelated and then sent back to the output of the I/O component.
+
 # MyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.2.

@@ -69,21 +69,36 @@ export class FormsComponent implements OnInit {
             return 'Type in here... I dare you';
           }
         },
-        'templateOptions.disabled': 'formState.awesomeIsForced',
+        'templateOptions.disabled': 'formState.awesomeIsForced'
+		'templateOptions.onChange': (event) =>{
+			console.log(event);
+			if(typeof(event.whyNot) != 'undefined'){
+				this.options.formState.awesomeIsForced = true;
+				this.model.awesome = true;
+			}
+		}
       },
       hideExpression: 'model.awesome',
       templateOptions: {
         label: 'Why Not?',
         placeholder: 'Type in here... I dare you',
-      },
+      }
     },
     {
-      key: 'custom',
+      key: 'formly-field-custom-input',
       type: 'custom',
       templateOptions: {
         label: 'Custom inlined',
       },
     },
+	{
+	  key: 'pixelationField',
+	  type: 'image-pixelation',
+	},
+	{
+	  key: 'pixelationField2',
+	  type: 'image-pixelation',
+	}
   ];
 
   constructor() {}

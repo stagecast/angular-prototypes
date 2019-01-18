@@ -10,12 +10,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormlyModule} from '@ngx-formly/core';
 import { FormsComponent } from './forms/forms.component';
+import { FormlyFieldImagePixelationInput } from './forms/image-pixelation.component';
+import { ImageProcessingInputOutputComponent } from './forms/image-processing-io.component';
 import { FormlyFieldCustomInput } from './forms/custom-input.component';
 
 const appRoutes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'dynamic-test', component: DynamicIframeComponent },
   { path: 'forms', component: FormsComponent },
+  { path: 'image-pixelation', component: FormlyFieldImagePixelationInput },
+  { path: 'image-processing-io', component: ImageProcessingInputOutputComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -26,7 +30,9 @@ const appRoutes: Routes = [
     WelcomeComponent,
     DynamicIframeComponent,
     FormlyFieldCustomInput,
-    FormsComponent
+    FormsComponent,
+	FormlyFieldImagePixelationInput,
+	ImageProcessingInputOutputComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +44,8 @@ const appRoutes: Routes = [
       ],
       types: [
         { name: 'custom', component: FormlyFieldCustomInput, wrappers: ['form-field'] },
+		{ name: 'image-pixelation', component: FormlyFieldImagePixelationInput,
+		defaultOptions: {label: 'test'}}
       ],
     }),
     FormlyBootstrapModule,
