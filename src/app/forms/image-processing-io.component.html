@@ -1,0 +1,15 @@
+﻿<label>
+<b>{{imageInputDescription}}</b><br/>
+<input type="file" accept="image/" text="test" (change)="onImageFileChanged($event)"/>
+</label>
+<br/>
+<label *ngIf="!showInput" ><br/>Result:</label><br/>
+<div style="display: inline-flex">
+	<canvas *ngIf="showInput" #input_canvas [style.width.px]="canvas_max_width" [style.height.px]="canvas_max_height" width="100" height="100" style="border: 2px solid #EEEEEE;">
+	</canvas>
+	<div *ngIf="showInput" style="display:flex;justify-content:center;align-items:center;padding:10px">
+		<p >➜</p>
+	</div>
+	<canvas #output_canvas src="output_image" [style.width.px]="canvas_max_width" [style.height.px]="canvas_max_height" width="100" height="100" style="border: 2px solid #EEEEEE;">
+	</canvas>
+</div>
