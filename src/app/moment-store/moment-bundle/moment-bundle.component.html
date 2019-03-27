@@ -1,0 +1,52 @@
+<!-- Main Content -->
+<div class="col-12 main-content" *ngIf="bundle$ | async as bundle">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 p-5">
+        <div class="parallax" [style.margin]="'-48px'" [style.margin-top]="'-32px'"
+          [style.background-image]="secureImgUrl">
+          <!--Breadcrumb-->
+          <nav aria-label="breadcrumb" role="navigation">
+            <ol class="breadcrumb small pt-5 ml-4 text-white">
+              <li class="breadcrumb-item"><a [routerLink]="['../../']" class="text-secondary">Moment
+                  Store</a></li>
+              <li class="breadcrumb-item"><a [routerLink]="['../../']" class="text-secondary">Moment
+                  Bundle</a></li>
+              <li class="breadcrumb-item"><a [routerLink]="['.']" class="text-white">Show Bundle</a>
+              </li>
+            </ol>
+          </nav>
+
+        </div>
+        <div class="bg-darkblue-700 p-4" style="margin: 0 -48px;">
+          <h1 class="ml-4 text-capitalize">{{bundle.name}} Bundle</h1>
+        </div>
+        <div class="text-white mt-5 mb-5">
+          <p class="h4">{{bundle.description}}
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-12 timeline">
+            <div class="timeline-title"></div>
+            <div class="timeline-center-line"></div>
+            <div class="timeline-entry row" *ngFor="let template of bundle.templates;">
+              <div class="col-2 text-center mt-4">
+                <div class="badge badge-soft-secondary">{{template.when}}</div>
+              </div>
+              <div class="col-10 col-md-6">
+                <a templateCard [template]="template.content"
+                  [routerLink]="['../../moment-info', template.content.dashedName]"
+                  class="media mb-3 mr-3 p-3 rounded transition-3d-hover"></a>
+              </div>
+              <div class="col-12 col-md-3 mt-4">
+                <p class="large text-white">{{template.info}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,39 @@
+<div class="col-12 pt-3 main-content">
+  <!--Breadcrumb-->
+  <nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb small mt-2  pl-0 text-white">
+      <li class="breadcrumb-item"><a [routerLink]="['/']" class="text-secondary">Moment
+          Store</a></li>
+      <!-- <li class="breadcrumb-item"><a href="# " class="text-white">Crowd Games</a></li> -->
+      <ng-container [ngSwitch]="resultType">
+        <ng-container *ngSwitchCase="'category'">
+          <li class="breadcrumb-item"><a href="# " class="text-white text-capitalize">Category:
+              {{category.split('-').join(' ')}}</a></li>
+        </ng-container>
+        <ng-container *ngSwitchCase="'search'">
+          <li class="breadcrumb-item"><a href="# " class="text-white">Search</a></li>
+        </ng-container>
+      </ng-container>
+    </ol>
+  </nav>
+  <ng-container [ngSwitch]="resultType">
+    <ng-container *ngSwitchCase="'category'">
+      <h1 class="text-capitalize">{{category.split('-').join(' ')}}</h1>
+    </ng-container>
+    <ng-container *ngSwitchCase="'search'">
+      <h1>Search results for "{{searchQuery}}"</h1>
+    </ng-container>
+  </ng-container>
+  <!-- <h2 class="text-secondary h4 mb-4">Engage with your audience in a fun and innovative way.</h2> -->
+  <div class="h4 font-weight-semibold text-white mb-5">{{(searchResults$ | async).length}} results</div>
+
+  <div class="section mt-5 mb-3">
+    <div class="media-container row flex-wrap justify-content-between">
+      <ng-container *ngFor="let result of (searchResults$ | async); let i = index; ">
+        <a templateCard [template]="result" [routerLink]="['../moment-info', result.dashedName]"
+          class="media mb-3 col-12 col-xl-6 p-3 rounded flex-xs-column transition-3d-hover"></a>
+      </ng-container>
+    </div>
+  </div>
+
+</div>

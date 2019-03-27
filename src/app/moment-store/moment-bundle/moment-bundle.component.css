@@ -1,0 +1,55 @@
+.parallax {
+  /* The image used */
+  /* background-image: url("https://assets.visitphilly.com/wp-content/uploads/2018/06/festival-pier-penns-landing-new-crtsy-festival-pier-2200x1237px.jpg"); */
+  /* background-image: url("./assets/show.jpg"); */
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  /* background-attachment: fixed;
+  /* background-position: center; */
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+}
+
+.timeline .timeline-center-line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  /* left: 12.5%; */
+  left: 8.5%;
+  margin-left: -2px;
+  background: #354361;
+  /* z-index: -1; */
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    margin-left: -17rem;
+  }
+
+  .main-content {
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+}
+
+
+.media:hover,
+.media:focus {
+  /* flex-basis: 30%; */
+  background-color: #29334A;
+  transition: background-color 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a.media:hover {
+  text-decoration: none;
+}

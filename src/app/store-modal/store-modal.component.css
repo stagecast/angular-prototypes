@@ -1,0 +1,20 @@
+.backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5)
+}
+
+#storeModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 95vh;
+  width: 1200px;
+  height: 100%;
+  max-width: 95vw;
+  overflow-y: scroll;
+}

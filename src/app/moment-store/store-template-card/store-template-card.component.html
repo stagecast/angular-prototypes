@@ -1,0 +1,24 @@
+<ng-container *ngIf="template; else loadingCard">
+  <div class="align-self-start mr-3 coral-gradient icon-box-lg">
+    <svg class="icon icon-white">
+      <use attr.xlink:href="./assets/main.svg#moments--{{template.dashedName}}-box"></use>
+    </svg>
+  </div>
+  <div class="media-body pr-3">
+    <h5 class="mt-0 mb-0 text-capitalize">{{template.name}} Moment
+      <ng-container *ngFor="let label of template.labels; let j = index; ">
+        <span class="badge badge-soft-{{lablesMap[label]}} ml-3 text-capitalize">{{label}}</span>
+      </ng-container>
+    </h5>
+    <div class="mb-3">
+      <ng-container *ngFor="let category of template.categories; let k = index; ">
+        <span class="text-coral text-capitalize mr-2">{{category}}</span>
+      </ng-container>
+    </div>
+    <p class="text-secondary">{{template.description}}</p>
+  </div>
+</ng-container>
+
+<ng-template #loadingCard>
+  <div class="w-100" style="height: 90px;"></div>
+</ng-template>

@@ -1,32 +1,38 @@
 <div class="container mt30">
   <div class="row justify-content-center">
     <div class="col">
-      <h1>Stagecast Test</h1>
-      <h4 class="italics text-muted">Angular Frontend Developer</h4>
-      <p>Click <a href="https://docs.google.com/document/d/1Vec78NtEvOGi9_VPJFyyBMPT5Enr_dv1S0hOBfqt2sE/edit" target="__blank">here</a> for more info.</p>
-
-      <span class="mt30">Note:</span> <br>
-      <p class="lead">This is mockup service used for development. Therefore, it does not offer advanced features and data checks. </p>
-
-      <hr>
+      <h1 class="italics text-muted">Angular Frontend Prototypes</h1>
+      <p class="lead">This is mockup application used for development and prototype testing.</p>
     </div>
-
   </div>
-  <div class="row justify-content-center mt30">
-    <div class="col">
-      <h3>Tasks</h3>
-      <h5>Part 1 - create a sign up journey</h5>
-      <p>You will need:</p>
-      <ul>
-        <li>Register Api: sends an email to the specified email.</li>
-        <li>Activate Api: to be called after the registration to add password and activate.</li>
-        <li>Login Api: get the token</li>
-        <li>Delete Api (optional): this api does not require authentication, in this way you can test with your own email. </li>
-      </ul>
-
-      <h5>Part 2 - create a test the validates the input form (view 1)</h5>
-
-      <p>Use the Karma testing tool provided by angular to unit test the first view. What to test is up to your own feelings.</p>
+  <div>
+    <div class="row">
+      <div class="col">
+        <h2 class="text-primary">Image Processing</h2>
+        <button class="btn btn-success mr-3">
+          <a class="text-white" [routerLink]="['/image-processing-io']">Go to</a>
+        </button>
+      </div>
+      <div class="col">
+        <h2 class="text-primary">Forms</h2>
+        <button class="btn btn-success mr-3">
+          <a class="text-white" [routerLink]="['/forms']">Go to forms</a>
+        </button>
+        <button class="btn btn-info mr-3">
+          <a class="text-white" [routerLink]="['/dynamic-test']">Go to dynamic</a>
+        </button>
+      </div>
+      <div class="col">
+        <h2 class="text-primary">Moment Store</h2>
+        <button class="btn btn-success mr-3">
+          <a class="text-white" [routerLink]="['/welcome', { outlets: { modal: 'store'} }]">Open modal</a>
+        </button>
+        <button class="btn btn-info mr-3">
+          <a class="text-white" [routerLink]="['/moment-store']">Go to page</a>
+        </button>
+      </div>
     </div>
+
   </div>
 </div>
+<router-outlet name="modal"></router-outlet>

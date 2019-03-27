@@ -1,0 +1,126 @@
+<div id="templateDesc" class="container-fluid bg-darkblue-900" *ngIf="template$ | async as tmp">
+  <div class="row justify-content-xl-center">
+    <!-- Main Content -->
+    <div class="col-12 bg-darkblue-800">
+      <div class="row p-md-4 justify-content-center">
+        <div class="col-12 col-md-8 col-xl-6 d-flex flex-row">
+          <div class="text-center mt-2 mr-2 mr-md-4 mt-md-5">
+            <div class="align-self-start coral-gradient icon-box-xl" #icon>
+              <svg class="icon icon-white">
+                <use attr.xlink:href="./assets/main.svg#moments--{{tmp.name}}-box"></use>
+              </svg>
+            </div>
+            <h1 class="h3 mt-3" #price>
+              <div class="badge badge-soft-info">{{tmp.price.amount}} {{tmp.price.currency}}</div>
+            </h1>
+
+          </div>
+          <div class="">
+            <nav aria-label="breadcrumb" role="navigation">
+              <ol class="breadcrumb small mt-2 pl-0 text-white">
+                <li class="breadcrumb-item"><a [routerLink]="['../../']" class="text-secondary">Moment
+                    Store</a></li>
+                <li class="breadcrumb-item"><a href="# " class="text-white text-capitalize">{{tmp.name}} Moment</a>
+                </li>
+              </ol>
+            </nav>
+            <h1 class="text-white text-capitalize" #title>{{tmp.name}} Moment</h1>
+            <div #templateDescription>
+              <p class="large text-white">{{tmp.defaultMessage}}</p>
+              <span class="text-info">Additional Ideation Moments will cost 0 SEK for this
+                event.</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-3 d-flex align-items-center justify-content-center">
+          <button #button class=" purple-gradient text-white btn btn-lg btn-wide transition-3d-hover">Try out
+            for free</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 pt-5">
+      <div class="row pt-5 justify-content-xl-center">
+        <div class="col-12 col-md-8 col-xl-6">
+          <div class="text-center mb-5">
+            <!-- <div id="img-loader" class="d-flex bg-darkblue-700 rounded w-75 m-auto" style="height:400px">
+              <img class=" m-auto" src="./assets/svg/preloaders--circular-preloader.svg" alt="">
+            </div> -->
+            <img id="img-moment" style="max-width: 100%;" src="./assets/stage-phone.svg" alt="Nono">
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-12">
+              <h3>When to use the moment</h3>
+              <p class="text-white">Use the Welcome Moment on a large screen when your audience
+                enters the venue and
+                make them feel extra-special welcomed!</p>
+            </div>
+            <div class="col-12 col-md-12">
+              <h3>How the moment works</h3>
+              <p class="text-white">The Welcome Moment lets the audience post short messages to a
+                screen and interact
+                with them in real time! fadf adf sad fsad fasd fsadfa f asdf s f sdaf asd f sadf as df asdf asd f asdf
+                asd f asdf asdf asdf asd f asdf asdf sad fsad f asdf asdf </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 col-xl-3">
+          <div class="section mb-5">
+            <h4 class="border-bottom border-darkblue-600">Categories</h4>
+            <div>
+              <ng-container *ngFor="let cat of tmp.categories">
+                <div class="badge badge-soft-coral text-capitalize mr-2">{{cat}}</div>
+              </ng-container>
+            </div>
+          </div>
+          <div class="section mb-5">
+            <h4 class="border-bottom border-darkblue-600">Features</h4>
+            <div class="row mb-3">
+              <div class="col-5"><span class="text-white">Accessibility</span></div>
+              <div class="col-7 text-right">
+                <span class="text-white text-capitalize">
+                  <ng-container *ngFor="let acc of tmp.accessibility; let i = index;">
+                    {{acc}}
+                  </ng-container>
+                </span>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5">
+                <span class="text-white">Brand Activation</span>
+              </div>
+              <div class="col-7 text-right">
+                <span class="text-white">{{tmp.brandActivation ? 'Yes': 'No'}}</span>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5"><span class="text-white">Stage Screen</span></div>
+              <div class="col-7 text-right text-green text-capitalize">{{tmp.stageScreen}}</div>
+            </div>
+          </div>
+          <div class="section mb-5">
+            <h4 class="border-bottom border-darkblue-600">Provider</h4>
+            <div class="row mb-3">
+              <div class="col-5"><span class="text-white">Developer</span> </div>
+              <div class="col-7 text-right text-muted">{{tmp.provider.developer}}</div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5"><span class="text-white">Added on</span></div>
+              <div class="col-7 text-right"><span class="text-white">{{tmp.provider.approved | date}}</span></div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-5"><span class="text-white">Support</span></div>
+              <div class="col-7 text-right text-muted">Contact Support</div>
+            </div>
+
+          </div>
+          <div class="section">
+            <div class="text-center">
+              <p class="text-muted">Are you missing a feature? <br> Tell us about it!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

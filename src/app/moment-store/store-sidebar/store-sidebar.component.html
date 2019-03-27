@@ -1,0 +1,56 @@
+<div class="p-4 sidebar sticky-top">
+  <div class="input-group mb-5">
+    <div class="input-group-prepend">
+      <div class="input-group-icon">
+        <svg class="icon icon-white">
+          <use xlink:href="./assets/main.svg#search-icon"></use>
+        </svg>
+      </div>
+    </div>
+    <input type="text" name="inputIcons2" placeholder="Search..." [formControl]="searchControl"
+      (keyup.enter)="onEnter(searchControl.value)" class="form-control">
+  </div>
+  <div class="section mb-5">
+    <h3>Staff Picks</h3>
+    <ul class="text-white list-unstyled">
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['.']"
+          [queryParams]="{type: 'bundles'}">Moment
+          Bundle</a></li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['.']"
+          [queryParams]="{type: 'recent'}">Recently
+          Used</a></li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['.']"
+          [queryParams]="{type: 'new'}">New
+          In</a></li>
+    </ul>
+  </div>
+  <div class="section mb-5">
+    <h3>Categories</h3>
+    <ul class="text-white list-unstyled">
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['./results']"
+          [queryParams]="{category: 'all'}">All</a></li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['./results']"
+          [queryParams]="{category: 'utilities'}">Utilities</a>
+      </li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['./results']"
+          [queryParams]="{category: 'crowd-games'}">Crowd
+          Games</a></li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['./results']"
+          [queryParams]="{category: 'marketing'}">Marketing</a>
+      </li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['./results']"
+          [queryParams]="{category: 'special-effects'}">Special
+          Effects</a></li>
+      <li class="mb-2"><a class="text-secondary" routerLinkActive="text-coral" [routerLink]="['./results']"
+          [queryParams]="{category: 'second-screen'}">Second
+          Screen</a></li>
+    </ul>
+  </div>
+  <div class="section">
+    <h3>Filters</h3>
+    <div>
+      <span class="badge badge-soft-info">Free</span>
+      <span class="badge badge-soft-success">New</span>
+    </div>
+  </div>
+</div>

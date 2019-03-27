@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 p-md-5">
+      <h1>Moment Store</h1>
+      <h2 class="text-secondary h4 mb-5">Tools to create interactive live experiences</h2>
+
+      <!-- BUNDLE SECTION -->
+      <div class="section mt-3 mb-3">
+        <div class="mb-5">
+          <div class="d-flex justify-content-between">
+            <h3 class="text-white h5 font-weight-semibold">Moment Bundles</h3>
+            <a href="./moment-store-bundle.html" class="text-secondary">See all
+              <svg class="icon icon-brightblue">
+                <use xlink:href="./assets/main.svg#right-chevron-icon"></use>
+              </svg>
+            </a>
+          </div>
+          <p class="text-secondary">
+            We know what Moment suits to certain type of events. If you have a similar show please click them and see
+            what we suggest.
+          </p>
+        </div>
+        <div class="card-deck">
+          <a [routerLink]="['./bundles', 'bundle-0'+ (i+1)]" *ngFor="let bundle of (bundles$ | async); let i = index; "
+            class="card bg-darkblue-700 transition-3d-hover moment-store-card">
+            <div class="card-img-top">
+              <img [src]="bundle.img" alt="Card image cap" />
+            </div>
+            <div class="card-body">
+              <p class="card-text text-white">{{bundle.name}} Bundle</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- END OF BUNDLE SECTION -->
+
+      <!-- RECENTLY USED SECTION -->
+      <div class="section mt-5 mb-3">
+        <div class="mb-5">
+          <div class="d-flex justify-content-between">
+            <h3 class="text-white h5 font-weight-semibold">Recently Used</h3>
+            <a href="#" class="text-secondary">See all
+              <svg class="icon icon-brightblue">
+                <use xlink:href="./assets/main.svg#right-chevron-icon"></use>
+              </svg>
+            </a>
+          </div>
+          <p class="text-secondary">
+            Here are the Moments you latest have used.
+          </p>
+        </div>
+        <div class="media-container row flex-wrap justify-content-between">
+          <ng-container *ngFor="let used of (recentlyUsed$ | async); let i = index; ">
+            <a templateCard [template]="used" [routerLink]="['./moment-info', used.dashedName]"
+              class="media mb-3 col-12 col-xl-6 p-3 rounded flex-xs-column transition-3d-hover"></a>
+          </ng-container>
+        </div>
+      </div>
+      <!-- END OF RECENTLY-USED SECTION -->
+
+      <!-- NEW IN SECTION -->
+      <div class="section mt-5 mb-3">
+        <div class="mb-5">
+          <div class="d-flex justify-content-between">
+            <h3 class="text-white h5 font-weight-semibold">New In</h3>
+            <a href="#" class="text-secondary">See all
+              <svg class="icon icon-brightblue">
+                <use xlink:href="./assets/main.svg#right-chevron-icon"></use>
+              </svg>
+            </a>
+          </div>
+          <p class="text-secondary">
+            See the latest releases of Moments.
+          </p>
+        </div>
+        <div class="media-container row flex-wrap justify-content-between">
+          <ng-container *ngFor="let news of (newIn$ | async); let i = index; ">
+            <a templateCard [template]="news" [routerLink]="['./moment-info', news.dashedName]"
+              class="media mb-3 col-12 col-xl-6 p-3 rounded flex-xs-column transition-3d-hover"></a>
+          </ng-container>
+        </div>
+      </div>
+      <!-- END OF NEW IN SECTION -->
+    </div>
+  </div>
+</div>

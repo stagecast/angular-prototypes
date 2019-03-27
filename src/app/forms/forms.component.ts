@@ -1,38 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {FormlyFieldConfig, FormlyFormOptions} from '@ngx-formly/core';
 
-@Component({
-  selector: 'app-forms',
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.css']
-})
+@Component({selector: 'app-forms', templateUrl: './forms.component.html', styleUrls: ['./forms.component.css']})
 export class FormsComponent implements OnInit {
 
   form = new FormGroup({});
-  model: any = {};
-  options: FormlyFormOptions = {
+  model : any = {};
+  options : FormlyFormOptions = {
     formState: {
-      awesomeIsForced: false,
-    },
+      awesomeIsForced: false
+    }
   };
-  fields: FormlyFieldConfig[] = [
+  fields : FormlyFieldConfig[] = [
     {
       key: 'text',
       type: 'input',
       templateOptions: {
         label: 'Text',
         placeholder: 'Formly is terrific!',
-        required: true,
-      },
-    },
-    {
+        required: true
+      }
+    }, {
       key: 'nested.story',
       type: 'textarea',
       templateOptions: {
         label: 'Some sweet story',
         placeholder: 'It allows you to build and maintain your forms with the ease of JavaScript :-)',
-        description: '',
+        description: ''
       },
       expressionProperties: {
         'templateOptions.focus': 'formState.awesomeIsForced',
@@ -40,13 +35,14 @@ export class FormsComponent implements OnInit {
           if (formState.awesomeIsForced) {
             return 'And look! This field magically got focus!';
           }
-        },
-      },
-    },
-    {
+        }
+      }
+    }, {
       key: 'awesome',
       type: 'checkbox',
-      templateOptions: { label: '' },
+      templateOptions: {
+        label: ''
+      },
       expressionProperties: {
         'templateOptions.disabled': 'formState.awesomeIsForced',
         'templateOptions.label': (model, formState) => {
@@ -55,10 +51,9 @@ export class FormsComponent implements OnInit {
           } else {
             return 'Is formly totally awesome? (uncheck this and see what happens)';
           }
-        },
-      },
-    },
-    {
+        }
+      }
+    }, {
       key: 'whyNot',
       type: 'textarea',
       expressionProperties: {
@@ -69,36 +64,33 @@ export class FormsComponent implements OnInit {
             return 'Type in here... I dare you';
           }
         },
-        'templateOptions.disabled': 'formState.awesomeIsForced'
-		'templateOptions.onChange': (event) =>{
-			console.log(event);
-			if(typeof(event.whyNot) != 'undefined'){
-				this.options.formState.awesomeIsForced = true;
-				this.model.awesome = true;
-			}
-		}
+        'templateOptions.disabled': 'formState.awesomeIsForced',
+        'templateOptions.onChange': (event) => {
+          console.log(event);
+          if (typeof(event.whyNot) != 'undefined') {
+            this.options.formState.awesomeIsForced = true;
+            this.model.awesome = true;
+          }
+        }
       },
       hideExpression: 'model.awesome',
       templateOptions: {
         label: 'Why Not?',
-        placeholder: 'Type in here... I dare you',
+        placeholder: 'Type in here... I dare you'
       }
-    },
-    {
+    }, {
       key: 'formly-field-custom-input',
       type: 'custom',
       templateOptions: {
-        label: 'Custom inlined',
-      },
-    },
-	{
-	  key: 'pixelationField',
-	  type: 'image-pixelation',
-	},
-	{
-	  key: 'pixelationField2',
-	  type: 'image-pixelation',
-	}
+        label: 'Custom inlined'
+      }
+    }, {
+      key: 'pixelationField',
+      type: 'image-pixelation'
+    }, {
+      key: 'pixelationField2',
+      type: 'image-pixelation'
+    }
   ];
 
   constructor() {}
