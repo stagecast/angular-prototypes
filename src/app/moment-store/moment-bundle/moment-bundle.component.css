@@ -39,6 +39,7 @@
   .main-content {
     padding-right: 0rem;
     padding-left: 0rem;
+    overflow-x: hidden;
   }
 }
 

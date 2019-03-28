@@ -5,34 +5,32 @@
       <p class="lead">This is mockup application used for development and prototype testing.</p>
     </div>
   </div>
-  <div>
-    <div class="row">
-      <div class="col">
-        <h2 class="text-primary">Image Processing</h2>
-        <button class="btn btn-success mr-3">
-          <a class="text-white" [routerLink]="['/image-processing-io']">Go to</a>
-        </button>
-      </div>
-      <div class="col">
-        <h2 class="text-primary">Forms</h2>
-        <button class="btn btn-success mr-3">
-          <a class="text-white" [routerLink]="['/forms']">Go to forms</a>
-        </button>
-        <button class="btn btn-info mr-3">
-          <a class="text-white" [routerLink]="['/dynamic-test']">Go to dynamic</a>
-        </button>
-      </div>
-      <div class="col">
-        <h2 class="text-primary">Moment Store</h2>
-        <button class="btn btn-success mr-3">
-          <a class="text-white" [routerLink]="['/welcome', { outlets: { modal: 'store'} }]">Open modal</a>
-        </button>
-        <button class="btn btn-info mr-3">
-          <a class="text-white" [routerLink]="['/moment-store']">Go to page</a>
-        </button>
-      </div>
+  <div class="row">
+    <div class="col-6 col-md-3">
+      <h2 class="text-primary">Image Processing</h2>
+      <button class="btn btn-success mr-3">
+        <a class="text-white" [routerLink]="['/image-processing-io']">Go to</a>
+      </button>
     </div>
-
+    <div class="col-6 col-md-3">
+      <h2 class="text-primary">Forms</h2>
+      <button class="btn btn-success mr-3">
+        <a class="text-white" [routerLink]="['/forms']">Go to forms</a>
+      </button>
+      <button class="btn btn-info mr-3">
+        <a class="text-white" [routerLink]="['/dynamic-test']">Go to dynamic</a>
+      </button>
+    </div>
+    <div class="col-6 col-md-3">
+      <h2 class="text-primary">Moment Store</h2>
+      <button class="btn btn-success mr-3">
+        <a class="text-white" [routerLink]="['/welcome', { outlets: { modal: 'store'} }]">Open modal</a>
+      </button>
+      <button class="btn btn-info mr-3">
+        <a class="text-white" [routerLink]="['/moment-store']">Go to page</a>
+      </button>
+    </div>
   </div>
+
 </div>
 <router-outlet name="modal"></router-outlet>

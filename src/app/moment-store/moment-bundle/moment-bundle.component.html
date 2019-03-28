@@ -2,7 +2,7 @@
 <div class="col-12 main-content" *ngIf="bundle$ | async as bundle">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 p-5">
+      <div class="col-12 p-3 p-lg-5">
         <div class="parallax" [style.margin]="'-48px'" [style.margin-top]="'-32px'"
           [style.background-image]="secureImgUrl">
           <!--Breadcrumb-->
@@ -36,7 +36,7 @@
               <div class="col-10 col-md-6">
                 <a templateCard [template]="template.content"
                   [routerLink]="['../../moment-info', template.content.dashedName]"
-                  class="media mb-3 mr-3 p-3 rounded transition-3d-hover"></a>
+                  class="media flex-wrap mb-3 mr-3 p-3 rounded transition-3d-hover"></a>
               </div>
               <div class="col-12 col-md-3 mt-4">
                 <p class="large text-white">{{template.info}}</p>

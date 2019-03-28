@@ -4,7 +4,7 @@
       <use attr.xlink:href="./assets/main.svg#moments--{{template.dashedName}}-box"></use>
     </svg>
   </div>
-  <div class="media-body pr-3">
+  <div class="media-body pr-3" style="flex-basis: 70%">
     <h5 class="mt-0 mb-0 text-capitalize">{{template.name}} Moment
       <ng-container *ngFor="let label of template.labels; let j = index; ">
         <span class="badge badge-soft-{{lablesMap[label]}} mr-2 text-capitalize">{{label}}</span>
