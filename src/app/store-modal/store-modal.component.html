@@ -1,7 +1,7 @@
 <div class="backdrop"></div>
 <div #storeModal id="storeModal" class="rounded" (scroll)="onScroll($event)">
   <div class="sticky-top w-100">
-    <button type="button" class="close position-absolute right-0 z-100 p-4" aria-label="Close" (click)="dismiss()">
+    <button type="button" class="close position-absolute right-0 z-index-4 p-4" aria-label="Close" (click)="dismiss()">
       <svg class="icon icon-white">
         <use [attr.xlink:href]="'./assets/main.svg#close-icon'"></use>
       </svg>

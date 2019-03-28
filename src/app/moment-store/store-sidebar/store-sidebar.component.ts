@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({selector: 'app-store-sidebar', templateUrl: './store-sidebar.component.html', styleUrls: ['./store-sidebar.component.css']})
 export class StoreSidebarComponent implements OnInit {
-
+  @Output()onSearch : EventEmitter < string > = new EventEmitter('');
   public searchControl : FormControl;
   constructor(public route : ActivatedRoute, private router : Router) {
     this.searchControl = new FormControl('');
@@ -14,6 +14,9 @@ export class StoreSidebarComponent implements OnInit {
 
   onEnter(value) {
     let query = value;
+    this
+      .onSearch
+      .emit(value);
     if (!query) {
       this
         .router

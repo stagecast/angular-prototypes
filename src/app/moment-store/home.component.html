@@ -1,7 +1,7 @@
 <main class="bg-darkblue-800">
   <div class="container-fluid">
     <div class="row" style="min-height: calc(100vh - 4.5rem)">
-      <div class="col-12 col-lg-3 col-xl-3 p-0 bg-darkblue-900 d-lg-block">
+      <div class="col-12 col-lg-3 col-xl-3 p-0 bg-darkblue-900 d-lg-block sticky-top z-index-2">
         <div class="d-lg-none d-flex py-2 px-3 align-items-center text-body sidebar-collapsed"
           (click)="sidebarCollapsed = !sidebarCollapsed" role="button">
           <button class="btn btn-link p-3" aria-controls="doc-nav" [attr.aria-expanded]="!sidebarCollapsed"
@@ -14,7 +14,9 @@
             </svg>
           </button>
         </div>
-        <app-store-sidebar class="d-lg-block collapse" [class.show]="!sidebarCollapsed"></app-store-sidebar>
+        <app-store-sidebar class="d-lg-block collapse sidebar sticky-top" (onSearch)="sidebarCollapsed = true"
+          [class.show]="!sidebarCollapsed">
+        </app-store-sidebar>
       </div>
       <div class="col-12 col-lg-9 col-xl-9 p-0">
         <router-outlet></router-outlet>
